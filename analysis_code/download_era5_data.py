@@ -3,11 +3,11 @@ import pandas as pd
 import zipfile
 import os
 
-def get_dates(FOLDER):
+def get_dates(FOLDER, YEAR):
     # Get list of required dates from a CSV file
     dates_df = pd.read_csv(f'TEMP_OUTPUTS/{FOLDER}/highest_hours.csv', index_col=None, header=[0])
     dates = pd.to_datetime(dates_df['Time'])
-    dates = dates.map(lambda d: d.replace(year=2019))
+    dates = dates.map(lambda d: d.replace(year=YEAR))
     dates = dates.dt.strftime('%Y-%m-%d').unique().tolist()
     return dates
 
@@ -44,10 +44,10 @@ def unzip_data(zip_path, unzip_directory):
 
     print(f"Extracted all files to: {unzip_directory}")
 
-def get_era5(FOLDER):
+def get_era5(FOLDER, YEAR):
     unzip_directory = f'TEMP_OUTPUTS/{FOLDER}/era5_data_high-prices'
     zip_path = unzip_directory + '.zip'
 
-    dates = get_dates(FOLDER)
+    dates = get_dates(FOLDER, YEAR)
     download_data(dates, zip_path)
     unzip_data(zip_path, unzip_directory)
