@@ -122,7 +122,7 @@ def plot_generation(data, dates, RUN_NAME):
     # Auto-format for better readability
     fig.autofmt_xdate()
 
-    plt.vlines(dates, 0, max(generation.sum(axis=1)))
+    plt.vlines(dates, 0, max(generation.sum(axis=1)), color='black', linestyle='dashed', label='High Prices')
 
     plt.xlabel('Time')
     plt.ylabel('Generation (MW)')
@@ -148,7 +148,7 @@ def plot_demand(data, dates, RUN_NAME):
     # Auto-format for better readability
     fig.autofmt_xdate()
 
-    plt.vlines(dates, 0, max(total_demand))
+    plt.vlines(dates, 0, max(total_demand), color='black', linestyle='dashed', label='High Prices')
 
     plt.xlabel('Time')
     plt.ylabel('Demand (MW)')

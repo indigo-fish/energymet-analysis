@@ -1,3 +1,4 @@
 .git/*
 .idea/*
 .venv/*
+analysis_code/__pycache__/*
