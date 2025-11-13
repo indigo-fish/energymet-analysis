@@ -2,3 +2,4 @@
 .idea/*
 .venv/*
 analysis_code/__pycache__/*
+DATA/*.nc

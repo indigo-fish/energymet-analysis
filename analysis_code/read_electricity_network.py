@@ -114,7 +114,7 @@ def plot_generation(data, dates, RUN_NAME):
     generation = data["generation_by_carrier"]
 
     fig, ax = plt.subplots()
-    generation.plot.area(ax=ax, color=[color_map[carrier] for carrier in generation.columns])
+    ax.stackplot(generation.index, generation.T, labels=generation.columns, colors=[color_map[carrier] for carrier in generation.columns])
 
     # Format the x-axis
     date_format = mdates.DateFormatter('%Y-%m-%d')
