@@ -1,0 +1,6 @@
+xarray
+pandas
+numpy
+matplotlib
+cartopy
+cdsapi
