@@ -4,12 +4,12 @@ import cartopy.feature as cfeature
 import matplotlib.pyplot as plt
 
 
-def load_data(FOLDER):
+def load_data(FOLDER, extension1, extension2, suffix):
     # Compose file paths for the instant vs accumulated streams produced by the ERA5 download.
-    FILE1 = f"TEMP_OUTPUTS/{FOLDER}/era5_data_high-prices/data_stream-oper_stepType-instant.nc"
+    FILE1 = f"TEMP_OUTPUTS/{FOLDER}/{suffix}/{extension1}"
     data1 = xr.open_dataset(FILE1, engine="netcdf4")
 
-    FILE2 = f"TEMP_OUTPUTS/{FOLDER}/era5_data_high-prices/data_stream-oper_stepType-accum.nc"
+    FILE2 = f"TEMP_OUTPUTS/{FOLDER}/{suffix}/{extension2}"
     data2 = xr.open_dataset(FILE2, engine="netcdf4")
 
     # Merge datasets so we have all required variables in a single xarray Dataset.
@@ -22,7 +22,7 @@ def load_data(FOLDER):
     # - ssrd: surface solar radiation downwards given as J m^-2 over the period;
     #   dividing by 3600 approximates an hourly average in W m^-2 when data are hourly accumulations.
     temperature_2m = data["t2m"] - 273.15  # from Kelvin to C
-    surface_pressure = data["sp"] / 100  # from Pa to hPa
+    sea_level_pressure = data["msl"] / 100  # from Pa to hPa
     u_100m = data["u100"]
     v_100m = data["v100"]
     windspeed_100m = (u_100m**2 + v_100m**2) ** 0.5  # m s^-1
@@ -36,27 +36,33 @@ def load_data(FOLDER):
     # Map variable display names to computed DataArray objects, units and colormaps
     label_map = {
         "2m Temperature": temperature_2m,
-        "Surface Pressure": surface_pressure,
+        "Mean Sea Level Pressure": sea_level_pressure,
         "100m Wind Speed": windspeed_100m,
         "Global Horizontal Irradiance": surface_radiation,
     }
     unit_map = {
         "2m Temperature": "$^o$C",
-        "Surface Pressure": "hPa",
+        "Mean Sea Level Pressure": "hPa",
         "100m Wind Speed": "m s$^{-1}$",
         "Global Horizontal Irradiance": "W m$^{-2}$",
     }
     color_map = {
         "2m Temperature": "bwr",
-        "Surface Pressure": "cividis",
+        "Mean Sea Level Pressure": "cividis",
         "100m Wind Speed": "viridis",
         "Global Horizontal Irradiance": "magma",
     }
+    limit_map = {
+        "2m Temperature": (-15, 40),
+        "100m Wind Speed": (0, 20),
+        "Global Horizontal Irradiance": (50, 350),
+        "Mean Sea Level Pressure": (995, 1025),
+    }
 
-    return label_map, unit_map, color_map, time, lat, lon
+    return label_map, unit_map, color_map, limit_map, time, lat, lon
 
 
-def plot_dataset(variable, ds, unit_map, color_map, FOLDER):
+def plot_dataset(variable, ds, unit_map, color_map, limit_map, FOLDER):
     # Take a time-mean across the 'valid_time' dimension so the plot shows
     # an aggregated snapshot (average over the requested times).
     dataset = ds.mean(dim="valid_time")
@@ -65,6 +71,8 @@ def plot_dataset(variable, ds, unit_map, color_map, FOLDER):
     plt.figure(figsize=(12, 6))
     ax = plt.axes(projection=ccrs.PlateCarree())  # The projection for the plot
 
+    vmin, vmax = limit_map[variable]
+
     # Use xarray/matplotlib to plot the gridded dataset onto the map.
     # transform=PlateCarree tells cartopy the data's coordinate system is regular lon/lat.
     dataset.plot(
@@ -72,6 +80,8 @@ def plot_dataset(variable, ds, unit_map, color_map, FOLDER):
         transform=ccrs.PlateCarree(),
         levels=10,  # number of contour levels / filled intervals
         cmap=color_map[variable],
+        vmin=vmin,
+        vmax=vmax,
         cbar_kwargs={"label": unit_map[variable]},
     )
 
@@ -96,8 +106,23 @@ def plot_dataset(variable, ds, unit_map, color_map, FOLDER):
     plt.savefig(f"Figures/{FOLDER}/{variable}.png", bbox_inches="tight")
 
 
-def era5_processing(FOLDER):
+def era5_processing(FOLDER, suffix):
     # Load processed DataArrays and metadata then loop over each variable to plot.
-    label_map, unit_map, color_map, time, lat, lon = load_data(FOLDER)
+    extension1 = "data_stream-oper_stepType-instant.nc"
+    extension2 = "data_stream-oper_stepType-accum.nc"
+    label_map, unit_map, color_map, limit_map, time, lat, lon = load_data(
+        FOLDER, extension1, extension2, suffix
+    )
     for variable, ds in label_map.items():
-        plot_dataset(variable, ds, unit_map, color_map, FOLDER)
+        plot_dataset(variable, ds, unit_map, color_map, limit_map, FOLDER)
+
+
+def era5_processing_yearly(FOLDER, suffix):
+    # Load processed DataArrays and metadata then loop over each variable to plot.
+    extension1 = "data_stream-mnth_stepType-avgas.nc"
+    extension2 = "data_stream-mnth_stepType-avgua.nc"
+    label_map, unit_map, color_map, limit_map, time, lat, lon = load_data(
+        FOLDER, extension1, extension2, suffix
+    )
+    for variable, ds in label_map.items():
+        plot_dataset(variable, ds, unit_map, color_map, limit_map, FOLDER)

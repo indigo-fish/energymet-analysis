@@ -18,6 +18,7 @@ renewable_map = {
     "hydro": True,
     "hydrogen_ct": False,
     "nuclear": False,
+    "offwind": True,
     "offwind_floating": True,
     "oil": False,
     "onwind": True,
@@ -36,7 +37,8 @@ color_map = {
     "hydro": "#1E90FF",  # strong blue — water
     "hydrogen_ct": "#00CED1",  # cyan — hydrogen / clean fuel
     "nuclear": "#FFD700",  # bright yellow — nuclear hazard color
-    "offwind_floating": "#4169E1",  # royal blue — offshore wind
+    "offwind_floating": "#A569E1",  # purple — floating offshore wind
+    "offwind": "#4169E1",  # royal blue — offshore wind
     "oil": "#4B0082",  # dark indigo — petroleum
     "onwind": "#87CEEB",  # sky blue — onshore wind
     "solar": "#FFA500",  # orange — sunlight
@@ -44,7 +46,7 @@ color_map = {
 }
 
 
-def read_electricity_network(file_path):
+def read_electricity_network(file_path, frequency):
     """Reads the electricity network data from a NetCDF file.
 
     :param file_path: Path to the NetCDF file.
@@ -60,7 +62,7 @@ def read_electricity_network(file_path):
     # Build a time index for the snapshots. The original dataset uses
     # a regular hourly frequency, so construct a cftime_range and convert.
     time = xr.cftime_range(
-        start="2030-01-01 00:00:00", periods=prices.sizes["snapshots"], freq="H"
+        start="2050-01-01 00:00:00", periods=prices.sizes["snapshots"], freq=frequency
     )
     # Convert cftime objects to native Python datetimes for plotting and pandas usage
     time = cftime_to_datetime(time)
@@ -251,7 +253,7 @@ def find_highest_price_hours(data, n_std=1):
     return threshold, highest_hours
 
 
-def electricity_analysis(RUN_NAME):
+def electricity_analysis(RUN_NAME, frequency):
     """
     Top-level entry point for the electricity analysis.
     Loads the specified NetCDF run, finds high-price hours, and
@@ -264,21 +266,19 @@ def electricity_analysis(RUN_NAME):
         sys.exit(1)
 
     # Read and preprocess the network data
-    data = read_electricity_network(FILE)
+    data = read_electricity_network(FILE, frequency)
     # Identify the threshold and the hours that exceed it
     threshold, highest_hours = find_highest_price_hours(data)
     df = pd.DataFrame(highest_hours)
     df.columns = ["Time", "Mean Hourly Price (USD)"]
 
     # Ensure output directories exist and persist the list of high-price hours
-    os.makedirs(f"TEMP_OUTPUTS/{RUN_NAME}", exist_ok=True)
     df.to_csv(f"TEMP_OUTPUTS/{RUN_NAME}/highest_hours.csv", index=False)
 
     # Extract unique dates that contain high-price hours for plotting vertical lines
     dates = df["Time"].dt.strftime("%Y-%m-%d").unique().tolist()
 
     # Ensure figure directory exists and create plots
-    os.makedirs(f"Figures/{RUN_NAME}", exist_ok=True)
     plot_hourly_price(data, threshold, RUN_NAME)
     plot_generation(data, dates, RUN_NAME)
     plot_demand(data, dates, RUN_NAME)

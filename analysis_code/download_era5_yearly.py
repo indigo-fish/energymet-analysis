@@ -1,34 +1,18 @@
 import cdsapi
-import pandas as pd
 import zipfile
 import os
 
 
-def get_dates(FOLDER, YEAR):
-    # Read the CSV produced by the electricity analysis which lists high-price hours.
-    # The CSV is expected at TEMP_OUTPUTS/{FOLDER}/highest_hours.csv and contains a
-    # 'Time' column. We convert to datetimes, change the year to the requested YEAR,
-    # then return unique date strings in 'YYYY-MM-DD' format for ERA5 requests.
-    dates_df = pd.read_csv(
-        f"TEMP_OUTPUTS/{FOLDER}/highest_hours.csv", index_col=None, header=[0]
-    )
-    dates = pd.to_datetime(dates_df["Time"])
-    # Replace the year (useful to fetch a particular year's weather on the same month/day)
-    dates = dates.map(lambda d: d.replace(year=YEAR))
-    dates = dates.dt.strftime("%Y-%m-%d").unique().tolist()
-    return dates
-
-
-def download_data(dates, zip_path):
+def download_data(year, zip_path):
     # Create a cdsapi.Client and request ERA5 single-level reanalysis for the given dates.
     # The requested variables include 2m temperature, surface pressure, 100m wind components,
     # and surface solar radiation. The output format is NetCDF which the code expects.
     c = cdsapi.Client()
 
     c.retrieve(
-        "reanalysis-era5-single-levels",
+        "reanalysis-era5-single-levels-monthly-means",
         {
-            "product_type": "reanalysis",
+            "product_type": ["monthly_averaged_reanalysis_by_hour_of_day"],
             # Variables to request from ERA5
             "variable": [
                 "2m_temperature",
@@ -37,7 +21,21 @@ def download_data(dates, zip_path):
                 "100m_v_component_of_wind",
                 "surface_solar_radiation_downwards",
             ],
-            "date": dates,
+            "year": [year],
+            "month": [
+                "01",
+                "02",
+                "03",
+                "04",
+                "05",
+                "06",
+                "07",
+                "08",
+                "09",
+                "10",
+                "11",
+                "12",
+            ],
             # Times chosen per day (here four snapshots: 00, 06, 12, 18 UTC)
             "time": ["00:00", "06:00", "12:00", "18:00"],
             # Area in North, West, South, East (approximate CONUS bounding box)
@@ -65,6 +63,5 @@ def get_era5(FOLDER, YEAR, suffix):
     unzip_directory = f"TEMP_OUTPUTS/{FOLDER}/{suffix}"
     zip_path = unzip_directory + ".zip"
 
-    dates = get_dates(FOLDER, YEAR)  # list of YYYY-MM-DD strings
-    download_data(dates, zip_path)  # fetch the ERA5 data archive
+    download_data(YEAR, zip_path)  # fetch the ERA5 data archive
     unzip_data(zip_path, unzip_directory)  # extract contents for downstream processing
