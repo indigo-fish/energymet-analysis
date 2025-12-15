@@ -104,6 +104,7 @@ def plot_dataset(variable, ds, unit_map, color_map, limit_map, FOLDER):
     # Finalize and write the figure to the Figures folder for the run
     plt.title(f"{variable} ({unit_map[variable]})")
     plt.savefig(f"Figures/{FOLDER}/{variable}.png", bbox_inches="tight")
+    plt.close()
 
 
 def era5_processing(FOLDER, suffix):

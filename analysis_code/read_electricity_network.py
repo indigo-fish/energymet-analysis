@@ -135,6 +135,9 @@ def plot_hourly_price(data, threshold, RUN_NAME):
         label="Threshold for High Prices",
     )
 
+    # ---- Set x-axis limits ----
+    ax.set_xlim(pd.Timestamp("2050-01-01"), pd.Timestamp("2051-01-01"))
+
     # Format the x-axis to show dates clearly
     date_format = mdates.DateFormatter("%Y-%m-%d")
     ax.xaxis.set_major_formatter(date_format)
@@ -168,6 +171,9 @@ def plot_generation(data, dates, RUN_NAME):
         labels=generation.columns,
         colors=[color_map[carrier] for carrier in generation.columns],
     )
+
+    # ---- Set x-axis limits ----
+    ax.set_xlim(pd.Timestamp("2050-01-01"), pd.Timestamp("2051-01-01"))
 
     # Format x-axis for readability
     date_format = mdates.DateFormatter("%Y-%m-%d")
@@ -211,6 +217,9 @@ def plot_demand(data, dates, RUN_NAME):
     fig, ax = plt.subplots()
     plt.plot(time, total_demand, label="Total Demand", color="blue")
     plt.plot(time, demand_net_renewable, label="Net Renewable", color="red")
+
+    # ---- Set x-axis limits ----
+    ax.set_xlim(pd.Timestamp("2050-01-01"), pd.Timestamp("2051-01-01"))
 
     # Format dates on x-axis
     date_format = mdates.DateFormatter("%Y-%m-%d")
