@@ -1,0 +1,34 @@
+__default__:
+  account: # fill account details
+  partition: parallel
+  email: # fill account details
+  walltime: 00:30:00   # time limit for each job
+  cpus_per_task: 3   # number of cores per job
+  mem: 0
+  chdir:
+  output: logs/{rule}/log-%j.out
+  error: logs/{rule}/errlog-%j.err
+
+build_cutout:
+  walltime: '24:00:00'
+
+build_renewable_profiles:
+  walltime: 06:00:00
+
+add_electricity:
+  walltime: 06:00:00
+
+simplify_network:
+  walltime: 09:00:00
+
+cluster_network:
+  walltime: 09:00:00
+
+solve_network:
+  walltime: '24:00:00'
+
+solve_network_validation:
+  walltime: 09:00:00
+
+add_demand:
+  walltime: 02:00:00
