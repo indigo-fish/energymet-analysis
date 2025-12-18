@@ -1,0 +1,116 @@
+Region,Carrier,2050
+ERCOT,4Hr_Battery_Storage,98.246
+ERCOT,8Hr_Battery_Storage,32297112.087
+ERCOT,Battery Storage,4556555.891
+ERCOT,Biomass,0.0
+ERCOT,Fixed Bottom Offshore Wind,5.609
+ERCOT,Floating Offshore Wind,0.997
+ERCOT,Hydrogen Combustion Turbine,6478333.043
+ERCOT,Nuclear,184147191.189
+ERCOT,Onshore Wind,124142934.09500001
+ERCOT,Reservoir & Dam,1025602.059
+ERCOT,Solar,173487813.385
+MISO,4Hr_Battery_Storage,751.121
+MISO,8Hr_Battery_Storage,79098716.066
+MISO,Battery Storage,622737.3759999999
+MISO,Biomass,0.0
+MISO,Fixed Bottom Offshore Wind,5.978
+MISO,Floating Offshore Wind,0.784
+MISO,Hydrogen Combustion Turbine,15066952.981
+MISO,Nuclear,234004328.44399998
+MISO,Onshore Wind,288247702.352
+MISO,Reservoir & Dam,13314079.497000001
+MISO,Solar,323123980.666
+MISO,Waste,0.0
+NPCC_NE,4Hr_Battery_Storage,170.845
+NPCC_NE,8Hr_Battery_Storage,4716302.177
+NPCC_NE,Battery Storage,240647.85700000002
+NPCC_NE,Biomass,0.0
+NPCC_NE,Fixed Bottom Offshore Wind,17697909.188
+NPCC_NE,Floating Offshore Wind,6.781000000000001
+NPCC_NE,Hydrogen Combustion Turbine,2126470.955
+NPCC_NE,Nuclear,78473964.67300001
+NPCC_NE,Onshore Wind,30.779
+NPCC_NE,Reservoir & Dam,8381814.958000001
+NPCC_NE,Solar,21678547.161
+NPCC_NE,Waste,0.0
+NPCC_NY,4Hr_Battery_Storage,46.73
+NPCC_NY,8Hr_Battery_Storage,1263137.019
+NPCC_NY,Battery Storage,111412.035
+NPCC_NY,Biomass,26269.018
+NPCC_NY,Fixed Bottom Offshore Wind,18.065
+NPCC_NY,Floating Offshore Wind,1.993
+NPCC_NY,Hydrogen Combustion Turbine,2687703.012
+NPCC_NY,Nuclear,102415674.246
+NPCC_NY,Onshore Wind,3750645.404
+NPCC_NY,Reservoir & Dam,27632283.724
+NPCC_NY,Solar,14176758.201000001
+NPCC_NY,Waste,0.0
+PJM,4Hr_Battery_Storage,575.4399999999999
+PJM,8Hr_Battery_Storage,25159962.112999998
+PJM,Battery Storage,87455.612
+PJM,Biomass,0.0
+PJM,Fixed Bottom Offshore Wind,86351879.00400001
+PJM,Floating Offshore Wind,10.620000000000001
+PJM,Hydrogen Combustion Turbine,14900216.204
+PJM,Nuclear,577553257.077
+PJM,Onshore Wind,111482002.791
+PJM,Reservoir & Dam,17083417.096
+PJM,Solar,166825462.584
+PJM,Waste,0.0
+SERC,4Hr_Battery_Storage,138.831
+SERC,8Hr_Battery_Storage,85129571.039
+SERC,Battery Storage,1135635.742
+SERC,Biomass,0.0
+SERC,Fixed Bottom Offshore Wind,49942140.864999995
+SERC,Floating Offshore Wind,2.543
+SERC,Hydrogen Combustion Turbine,8593781.461
+SERC,Nuclear,542321729.679
+SERC,Onshore Wind,20.88
+SERC,Reservoir & Dam,36147581.621
+SERC,Solar,410846551.717
+SERC,Waste,1589715.807
+SPP,4Hr_Battery_Storage,625.313
+SPP,8Hr_Battery_Storage,47240353.513
+SPP,Battery Storage,72771.86
+SPP,Biomass,0.0
+SPP,Hydrogen Combustion Turbine,5542145.881
+SPP,Nuclear,10669525.946
+SPP,Onshore Wind,159958170.779
+SPP,Reservoir & Dam,9056692.101
+SPP,Solar,142804988.917
+WECC_CA,4Hr_Battery_Storage,44038596.744
+WECC_CA,8Hr_Battery_Storage,4578057.044
+WECC_CA,Battery Storage,15981501.808
+WECC_CA,Biomass,0.0
+WECC_CA,Fixed Bottom Offshore Wind,5.576
+WECC_CA,Floating Offshore Wind,26.486
+WECC_CA,Geothermal,7097277.672
+WECC_CA,Hydrogen Combustion Turbine,2421675.57
+WECC_CA,Nuclear,104385122.65
+WECC_CA,Onshore Wind,2.722
+WECC_CA,Reservoir & Dam,26304357.493
+WECC_CA,Solar,219531119.84600002
+WECC_NWPP,4Hr_Battery_Storage,32349986.063
+WECC_NWPP,8Hr_Battery_Storage,17104260.302
+WECC_NWPP,Battery Storage,3616943.9
+WECC_NWPP,Biomass,0.0
+WECC_NWPP,Fixed Bottom Offshore Wind,489790.74399999995
+WECC_NWPP,Floating Offshore Wind,20678513.989
+WECC_NWPP,Geothermal,6518804.658000001
+WECC_NWPP,Hydrogen Combustion Turbine,4363668.592
+WECC_NWPP,Nuclear,71281028.823
+WECC_NWPP,Onshore Wind,105022382.819
+WECC_NWPP,Reservoir & Dam,133284820.874
+WECC_NWPP,Solar,156541134.857
+WECC_NWPP,Waste,0.0
+WECC_SRSG,4Hr_Battery_Storage,2645874.6350000002
+WECC_SRSG,8Hr_Battery_Storage,7443462.671
+WECC_SRSG,Battery Storage,5189627.673
+WECC_SRSG,Biomass,0.0
+WECC_SRSG,Geothermal,85118.223
+WECC_SRSG,Hydrogen Combustion Turbine,2388136.206
+WECC_SRSG,Nuclear,68674224.542
+WECC_SRSG,Onshore Wind,28600431.444
+WECC_SRSG,Reservoir & Dam,4636906.443999999
+WECC_SRSG,Solar,51888180.838

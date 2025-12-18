@@ -4,17 +4,21 @@ This project looks at the weather conditions associated with the highest electri
 ## Structure Overview
 
 The repository consists of the directories:
-- **analysis_code/**: All Python scripts other than **launch_analysis.py**.
-- **DATA/**: Includes a link to a compressed version of the sample netCDF electricity network output. This folder should be downloaded and extracted to this folder in the user's repository, or another `pypsa-usa` electricity network netCDF output provided.
+- **pypsa-usa_workflow/**: Files which should be replaced in the standard pypsa-usa repository, after [following instructions](https://pypsa-usa.readthedocs.io/en/latest/) for standard setup.
+- **pypsa-usa_figures/**: Includes plots that are created as part of the pypsa-usa runs, for the default networks.
+- **analysis_code/**: All Python scripts other than **launch_analysis.py** and **launch_yearly_average.py**.
+- **DATA/**: Includes a link to a compressed version of the netCDF electricity network outputs used in the study. This folder should be downloaded and extracted to this folder in the user's repository, or another `pypsa-usa` electricity network netCDF output provided.
 - **Figures/**: Used to store subfolder of plots for each run name analysed. By default includes plots of the sample network.
 - **TEMP_OUTPUTS/**: Will create a subfolder of intermediate output files (e.g. highest electricity price hours, ERA5 downloads) for each run analysed. By default includes these intermediate outputs for the sample network.
 
 ### Code
 
-1. **launch_analysis.py**: This is the main script that triggers the entire analysis process by calling the respective scripts in the **analysis_code/** folder to analyse electricity data, download ERA5 data, and process it. The user should update the `RUN_NAME` and `WEATHER_YEAR` before launching this script.
+1. **launch_analysis.py**: This is the main script that triggers the entire analysis process by calling the respective scripts in the **analysis_code/** folder to analyse electricity data, download ERA5 data, and process it. By default, assumes runs for 1988, 1998, 2019 and 2021 are being analysed at a time granularity of 1H, 2H, 3H, 4H, 6H. The user should update the run names and weather years before launching this script.
 2. **analysis_code/read_electricity_network.py**: This module reads and analyses electricity network data from the named netCDF file. It calculates mean hourly prices, identifies periods of high pricing, and visualises electricity generation by carrier.
 3. **analysis_code/download_era5_data.py**: This module contains functions for downloading ERA5 climate data using the CDS API. It loads the dates identified in the previous scripts, downloads the data for a set of relevant variables, and unzips the files for further processing.
 4. **analysis_code/process_era5_data.py**: This module contains functions used to process the downloaded ERA5 climate data, including loading datasets, plotting the data, and saving visualizations to specified folders.
+5. **launch_yearly_average.py**: This script is equivalent to **launch_analysis.py**, but for annual average data for each weather year to compare to.
+6. **analysis_code/download_ear5_yearly.py** This script is equivalent to **analysis_code/download_era5_data.py** but uses the monthly average ERA5 data to create annual average plots for comparison with the plots from high price periods.
 
 ## Requirements
 Ensure you have the following Python libraries installed:
@@ -51,6 +55,11 @@ It will:
 - Analyse electricity network data.
 - Download the relevant ERA5 data for the specified time period.
 - Process and visualise the downloaded data.
+
+To look at how the meteorological conditions during high electricity prices compare to average weather for the same time period, also run
+```
+python launch_yearly_average.py
+```
 
 ## Output
 The outputs of the analysis will be saved in the **Figures/** directory, and CSV files containing the highest pricing hours will be saved in the **TEMP_OUTPUTS/** directory.

@@ -1,0 +1,116 @@
+Region,Carrier,2050
+ERCOT,4Hr_Battery_Storage,12247.971000000001
+ERCOT,8Hr_Battery_Storage,4334.125
+ERCOT,Battery Storage,10332.2
+ERCOT,Biomass,0.0
+ERCOT,Fixed Bottom Offshore Wind,0.002
+ERCOT,Floating Offshore Wind,0.0
+ERCOT,Hydrogen Combustion Turbine,16218.652999999998
+ERCOT,Nuclear,34616.426
+ERCOT,Onshore Wind,64276.591
+ERCOT,Reservoir & Dam,555.1
+ERCOT,Solar,101071.896
+MISO,4Hr_Battery_Storage,45353.231
+MISO,8Hr_Battery_Storage,10839.839
+MISO,Battery Storage,628.4
+MISO,Biomass,0.0
+MISO,Fixed Bottom Offshore Wind,0.003
+MISO,Floating Offshore Wind,0.001
+MISO,Hydrogen Combustion Turbine,16731.334
+MISO,Nuclear,55445.471
+MISO,Onshore Wind,65147.903
+MISO,Reservoir & Dam,5852.283
+MISO,Solar,209686.639
+MISO,Waste,0.0
+NPCC_NE,4Hr_Battery_Storage,3339.5299999999997
+NPCC_NE,8Hr_Battery_Storage,2009.254
+NPCC_NE,Battery Storage,592.6999999999999
+NPCC_NE,Biomass,0.0
+NPCC_NE,Fixed Bottom Offshore Wind,4967.025
+NPCC_NE,Floating Offshore Wind,0.002
+NPCC_NE,Hydrogen Combustion Turbine,4601.07
+NPCC_NE,Nuclear,11102.482999999998
+NPCC_NE,Onshore Wind,0.041
+NPCC_NE,Reservoir & Dam,3907.547
+NPCC_NE,Solar,13925.063
+NPCC_NE,Waste,0.0
+NPCC_NY,4Hr_Battery_Storage,2202.4
+NPCC_NY,8Hr_Battery_Storage,1453.151
+NPCC_NY,Battery Storage,259.5
+NPCC_NY,Biomass,3.0
+NPCC_NY,Fixed Bottom Offshore Wind,0.003
+NPCC_NY,Floating Offshore Wind,0.001
+NPCC_NY,Hydrogen Combustion Turbine,4126.052000000001
+NPCC_NY,Nuclear,14914.140000000001
+NPCC_NY,Onshore Wind,1243.02
+NPCC_NY,Reservoir & Dam,6425.571
+NPCC_NY,Solar,10358.390000000001
+NPCC_NY,Waste,0.0
+PJM,4Hr_Battery_Storage,26468.726
+PJM,8Hr_Battery_Storage,2551.256
+PJM,Battery Storage,400.4
+PJM,Biomass,0.0
+PJM,Fixed Bottom Offshore Wind,2652.007
+PJM,Floating Offshore Wind,0.004
+PJM,Hydrogen Combustion Turbine,14009.866
+PJM,Nuclear,116224.334
+PJM,Onshore Wind,26261.798
+PJM,Reservoir & Dam,10992.449
+PJM,Solar,113223.637
+PJM,Waste,0.0
+SERC,4Hr_Battery_Storage,31001.926
+SERC,8Hr_Battery_Storage,6436.731
+SERC,Battery Storage,1369.0
+SERC,Biomass,0.0
+SERC,Fixed Bottom Offshore Wind,0.008
+SERC,Floating Offshore Wind,0.002
+SERC,Hydrogen Combustion Turbine,21542.453
+SERC,Nuclear,108667.62
+SERC,Onshore Wind,0.035
+SERC,Reservoir & Dam,19944.974000000002
+SERC,Solar,196023.561
+SERC,Waste,224.3
+SPP,4Hr_Battery_Storage,15846.666000000001
+SPP,8Hr_Battery_Storage,4034.2419999999997
+SPP,Battery Storage,228.8
+SPP,Biomass,0.0
+SPP,Hydrogen Combustion Turbine,9381.475
+SPP,Nuclear,7613.811
+SPP,Onshore Wind,70227.022
+SPP,Reservoir & Dam,4628.577
+SPP,Solar,71130.204
+WECC_CA,4Hr_Battery_Storage,0.059
+WECC_CA,8Hr_Battery_Storage,9053.722000000002
+WECC_CA,Battery Storage,13860.9
+WECC_CA,Biomass,0.0
+WECC_CA,Fixed Bottom Offshore Wind,0.594
+WECC_CA,Floating Offshore Wind,0.004
+WECC_CA,Geothermal,1106.9
+WECC_CA,Hydrogen Combustion Turbine,7421.896999999999
+WECC_CA,Nuclear,27722.909
+WECC_CA,Onshore Wind,0.012
+WECC_CA,Reservoir & Dam,12911.837000000001
+WECC_CA,Solar,85896.454
+WECC_NWPP,4Hr_Battery_Storage,0.708
+WECC_NWPP,8Hr_Battery_Storage,9921.512
+WECC_NWPP,Battery Storage,3446.3
+WECC_NWPP,Biomass,0.0
+WECC_NWPP,Fixed Bottom Offshore Wind,0.003
+WECC_NWPP,Floating Offshore Wind,0.002
+WECC_NWPP,Geothermal,1055.8999999999999
+WECC_NWPP,Hydrogen Combustion Turbine,11091.574
+WECC_NWPP,Nuclear,23864.189000000002
+WECC_NWPP,Onshore Wind,45036.825
+WECC_NWPP,Reservoir & Dam,37832.89
+WECC_NWPP,Solar,44833.265
+WECC_NWPP,Waste,0.0
+WECC_SRSG,4Hr_Battery_Storage,0.169
+WECC_SRSG,8Hr_Battery_Storage,3109.498
+WECC_SRSG,Battery Storage,4392.8
+WECC_SRSG,Biomass,0.0
+WECC_SRSG,Geothermal,19.2
+WECC_SRSG,Hydrogen Combustion Turbine,5468.212
+WECC_SRSG,Nuclear,12748.484999999999
+WECC_SRSG,Onshore Wind,11708.912
+WECC_SRSG,Reservoir & Dam,1914.711
+WECC_SRSG,Solar,21804.534

@@ -1,0 +1,116 @@
+Region,Carrier,2050
+ERCOT,4Hr_Battery_Storage,474.046
+ERCOT,8Hr_Battery_Storage,28209062.984
+ERCOT,Battery Storage,4426362.006
+ERCOT,Biomass,0.0
+ERCOT,Fixed Bottom Offshore Wind,6.28
+ERCOT,Floating Offshore Wind,1.23
+ERCOT,Hydrogen Combustion Turbine,9766692.075
+ERCOT,Nuclear,167796549.13
+ERCOT,Onshore Wind,145133258.359
+ERCOT,Reservoir & Dam,1004074.3900000001
+ERCOT,Solar,165556572.429
+MISO,4Hr_Battery_Storage,1849.267
+MISO,8Hr_Battery_Storage,103086264.287
+MISO,Battery Storage,649348.068
+MISO,Biomass,0.0
+MISO,Fixed Bottom Offshore Wind,9.112
+MISO,Floating Offshore Wind,1.403
+MISO,Hydrogen Combustion Turbine,11141569.59
+MISO,Nuclear,274234383.218
+MISO,Onshore Wind,142549674.88
+MISO,Reservoir & Dam,14087820.67
+MISO,Solar,386537112.47400004
+MISO,Waste,0.0
+NPCC_NE,4Hr_Battery_Storage,260.794
+NPCC_NE,8Hr_Battery_Storage,4121079.0930000003
+NPCC_NE,Battery Storage,235828.09100000001
+NPCC_NE,Biomass,0.0
+NPCC_NE,Fixed Bottom Offshore Wind,42991702.583
+NPCC_NE,Floating Offshore Wind,5.633
+NPCC_NE,Hydrogen Combustion Turbine,2184105.544
+NPCC_NE,Nuclear,57921883.228999995
+NPCC_NE,Onshore Wind,22.456
+NPCC_NE,Reservoir & Dam,8561314.799
+NPCC_NE,Solar,20042031.629
+NPCC_NE,Waste,0.0
+NPCC_NY,4Hr_Battery_Storage,74.64099999999999
+NPCC_NY,8Hr_Battery_Storage,1876446.536
+NPCC_NY,Battery Storage,106378.675
+NPCC_NY,Biomass,25885.232
+NPCC_NY,Fixed Bottom Offshore Wind,15794397.296
+NPCC_NY,Floating Offshore Wind,3.807
+NPCC_NY,Hydrogen Combustion Turbine,2683966.6520000002
+NPCC_NY,Nuclear,87420600.574
+NPCC_NY,Onshore Wind,3396613.096
+NPCC_NY,Reservoir & Dam,27632283.161
+NPCC_NY,Solar,13473409.964
+NPCC_NY,Waste,0.0
+PJM,4Hr_Battery_Storage,1140.9859999999999
+PJM,8Hr_Battery_Storage,22759784.812
+PJM,Battery Storage,79245.124
+PJM,Biomass,0.0
+PJM,Fixed Bottom Offshore Wind,12729309.082
+PJM,Floating Offshore Wind,14.763
+PJM,Hydrogen Combustion Turbine,9894735.661
+PJM,Nuclear,709898318.886
+PJM,Onshore Wind,81507372.223
+PJM,Reservoir & Dam,17087594.266
+PJM,Solar,159060658.221
+PJM,Waste,0.0
+SERC,4Hr_Battery_Storage,426.683
+SERC,8Hr_Battery_Storage,53626828.219000004
+SERC,Battery Storage,1066594.542
+SERC,Biomass,0.0
+SERC,Fixed Bottom Offshore Wind,197.162
+SERC,Floating Offshore Wind,3.191
+SERC,Hydrogen Combustion Turbine,11466754.673
+SERC,Nuclear,656550130.3100001
+SERC,Onshore Wind,27.613999999999997
+SERC,Reservoir & Dam,36680650.07
+SERC,Solar,341562696.043
+SERC,Waste,1631699.659
+SPP,4Hr_Battery_Storage,1181.777
+SPP,8Hr_Battery_Storage,46747265.941
+SPP,Battery Storage,68356.178
+SPP,Biomass,0.0
+SPP,Hydrogen Combustion Turbine,4346640.354
+SPP,Nuclear,18725820.736
+SPP,Onshore Wind,175401350.053
+SPP,Reservoir & Dam,10270103.814
+SPP,Solar,142481920.59600002
+WECC_CA,4Hr_Battery_Storage,39571439.482
+WECC_CA,8Hr_Battery_Storage,10066023.443
+WECC_CA,Battery Storage,15570945.175
+WECC_CA,Biomass,0.0
+WECC_CA,Fixed Bottom Offshore Wind,49.090999999999994
+WECC_CA,Floating Offshore Wind,212851.609
+WECC_CA,Geothermal,7165673.877
+WECC_CA,Hydrogen Combustion Turbine,2268369.0579999997
+WECC_CA,Nuclear,100482128.315
+WECC_CA,Onshore Wind,5.179
+WECC_CA,Reservoir & Dam,25627055.51
+WECC_CA,Solar,236341945.749
+WECC_NWPP,4Hr_Battery_Storage,15404337.537
+WECC_NWPP,8Hr_Battery_Storage,15154311.459
+WECC_NWPP,Battery Storage,3592333.4
+WECC_NWPP,Biomass,0.0
+WECC_NWPP,Fixed Bottom Offshore Wind,540465.451
+WECC_NWPP,Floating Offshore Wind,14720180.799
+WECC_NWPP,Geothermal,6567398.098
+WECC_NWPP,Hydrogen Combustion Turbine,3100051.7800000003
+WECC_NWPP,Nuclear,98511715.854
+WECC_NWPP,Onshore Wind,115552660.566
+WECC_NWPP,Reservoir & Dam,134508775.526
+WECC_NWPP,Solar,112615870.073
+WECC_NWPP,Waste,0.0
+WECC_SRSG,4Hr_Battery_Storage,3160474.321
+WECC_SRSG,8Hr_Battery_Storage,5419023.875
+WECC_SRSG,Battery Storage,5013642.861
+WECC_SRSG,Biomass,0.0
+WECC_SRSG,Geothermal,81030.944
+WECC_SRSG,Hydrogen Combustion Turbine,1603045.3630000001
+WECC_SRSG,Nuclear,75245211.85700001
+WECC_SRSG,Onshore Wind,31735693.801999997
+WECC_SRSG,Reservoir & Dam,4632787.946
+WECC_SRSG,Solar,40471647.94

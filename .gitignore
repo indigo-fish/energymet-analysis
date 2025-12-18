@@ -3,3 +3,9 @@
 .venv/*
 analysis_code/__pycache__/*
 DATA/*.nc
+
+DATA/solved_networks.tar.gz
+
+*.nc
+
+*.zip
