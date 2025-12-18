@@ -145,6 +145,7 @@ def plot_hourly_price(data, threshold, RUN_NAME):
 
     # Use log scale if prices vary over orders of magnitude
     plt.yscale("log")
+    ax.set_ylim(1e-7, 1e5)
 
     # Labels, title and legend
     plt.xlabel("Time")
